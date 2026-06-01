@@ -1,0 +1,240 @@
+
+.vjs-supply-chain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.vjs-surface, .vjs-sankey {
+    width: 100%;
+    height: 100%;
+}
+
+.vjs-controls {
+    position:absolute;
+    top:1rem;
+    left:1rem;
+}
+
+.vjs-supply-chain-canvas {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.vjs-supply-chain-view-panel {
+    flex: 1;
+    position: relative;
+    border-right: 1px solid #dfe6e9;
+}
+
+.vjs-supply-chain-palette {
+    width: 150px;
+    padding: 15px;
+    background-color: #f5f6fa;
+    border-left: 1px solid #dfe6e9;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vjs-supply-chain-palette-item {
+    background-color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: grab;
+    user-select: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--node-color, #445566);
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.vjs-supply-chain-palette-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.vjs-supply-chain-palette-item:active {
+    cursor: grabbing;
+}
+
+.vjs-supply-chain-item-header {
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 4px;
+    color: #666;
+    text-align: center;
+}
+
+.vjs-supply-chain-item-label {
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+}
+
+.vjs-supply-chain-node {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    min-width: 120px;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--node-color, #445566);
+}
+
+.vjs-supply-chain-node-type {
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 4px;
+    color: #666666;
+}
+
+
+.vjs-connect {
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #333333;
+    cursor: crosshair;
+    z-index: 10;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.vjs-connect:hover {
+    background-color: var(--node-color);
+    transform:translateY(-50%) scale(1.2);
+}
+
+/* --------------- inspector styles ------------------- */
+
+.vjs-supply-chain-inspector {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    max-height: calc(100% - 100px);
+    background-color: white;
+    border: 1px solid var(--vjs-erd-border);
+    border-radius: 12px;
+    box-shadow: var(--vjs-shadow-lg);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.vjs-supply-chain-inspector.vjs-inspector-inactive {
+    display: none;
+}
+
+.vjs-supply-chain-inspector label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--vjs-erd-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 1rem 0 0.5rem 0;
+    display: block;
+}
+
+.vjs-supply-chain-inspector label:first-child {
+    margin-top: 0;
+}
+
+.vjs-supply-chain-inspector input,
+.vjs-supply-chain-inspector textarea,
+.vjs-supply-chain-inspector select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--vjs-erd-border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--vjs-erd-text);
+    background-color: white;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.vjs-supply-chain-inspector input:focus,
+.vjs-supply-chain-inspector textarea:focus,
+.vjs-supply-chain-inspector select:focus {
+    outline: none;
+    border-color: var(--vjs-erd-primary);
+    box-shadow: 0 0 0 3px var(--vjs-erd-transparent-blue);
+}
+
+.vjs-supply-chain-inspector select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5em;
+    padding-right: 2.5rem;
+}
+
+/* --------- toolbar ----------------- */
+
+.vjs-supply-chain-toolbar {
+    padding: 0 20px;
+    height: 56px;
+    background: #2c3e50;
+    color: #ecf0f1;
+    border-bottom: 1px solid #1a252f;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.vjs-supply-chain-toolbar strong {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    color: #fff;
+}
+
+.vjs-supply-chain-toolbar .pivot-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.vjs-supply-chain-toolbar span {
+    font-size: 0.9rem;
+    color: #bdc3c7;
+}
+
+.vjs-supply-chain-toolbar select {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid #34495e;
+    background-color: #34495e;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.vjs-supply-chain-toolbar select:hover {
+    border-color: #3498db;
+}
+
+.vjs-supply-chain-toolbar select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}

@@ -1,0 +1,350 @@
+{
+  "nodes": [
+    {
+      "id": "S1",
+      "name": "Silicon Chipsets (TSMC)",
+      "type": "supplier",
+      "left": 7.84825753195775,
+      "top": 28.01
+    },
+    {
+      "id": "S2",
+      "name": "OLED Panels (Samsung)",
+      "type": "supplier",
+      "left": 3.592129184044488,
+      "top": 179.31023419955085
+    },
+    {
+      "id": "S3",
+      "name": "Lithium Batteries",
+      "type": "supplier",
+      "left": 2.9856438298943733,
+      "top": -124.80477259587326
+    },
+    {
+      "id": "P1",
+      "name": "Assembly Plant - Shenzhen",
+      "type": "factory",
+      "left": 319.5401561330339,
+      "top": 136.63779274943857
+    },
+    {
+      "id": "P2",
+      "name": "Assembly Plant - Vietnam",
+      "type": "factory",
+      "left": 317.09763661640466,
+      "top": -21.11966634584536
+    },
+    {
+      "id": "H1",
+      "name": "Western US RDC",
+      "type": "distribution-center",
+      "left": 589.0677146829216,
+      "top": -27.017792749438563
+    },
+    {
+      "id": "H2",
+      "name": "Eastern US RDC",
+      "type": "distribution-center",
+      "left": 591.5177927494385,
+      "top": 144.2448048337076
+    },
+    {
+      "id": "H3",
+      "name": "Logistics Cross-Dock",
+      "type": "cross-dock",
+      "left": 799.9797658004491,
+      "top": -189.5283392150572
+    },
+    {
+      "id": "D1",
+      "name": "Direct Fulfillment (Online)",
+      "type": "fulfillment-center",
+      "left": 808.1698438669662,
+      "top": 164.91542936584324
+    },
+    {
+      "id": "D2",
+      "name": "Retail Store - NYC",
+      "type": "retail-store",
+      "left": 1037.769921933483,
+      "top": 27.8598438669661
+    },
+    {
+      "id": "D3",
+      "name": "Retail Store - LA",
+      "type": "retail-store",
+      "left": 1042.67,
+      "top": -109.05810501550637
+    },
+    {
+      "id": "D4",
+      "name": "Wholesale Partner (BestBuy)",
+      "type": "wholesale-client",
+      "left": 1037.7774024168539,
+      "top": -250.86251951662922
+    },
+    {
+      "id": "S4",
+      "name": "Camera Modules (Sony)",
+      "type": "supplier",
+      "left": 3.2351890216408776,
+      "top": 350
+    },
+    {
+      "id": "P3",
+      "name": "Assembly Plant - India",
+      "type": "factory",
+      "left": 326.8626756496631,
+      "top": 316.9469340177521
+    },
+    {
+      "id": "H4",
+      "name": "European RDC",
+      "type": "distribution-center",
+      "left": 574.4251951662924,
+      "top": 314.50488290022463
+    },
+    {
+      "id": "H5",
+      "name": "Global Logistics Hub",
+      "type": "cross-dock",
+      "left": 817.0976366164047,
+      "top": 312.2125975831462
+    },
+    {
+      "id": "D5",
+      "name": "European Fulfillment",
+      "type": "fulfillment-center",
+      "left": 1054.8850390332584,
+      "top": 530.6031440487649
+    },
+    {
+      "id": "D6",
+      "name": "Retail Store - London",
+      "type": "retail-store",
+      "left": 1052.4425195166293,
+      "top": 677.0110148647203
+    },
+    {
+      "id": "D7",
+      "name": "Wholesale Partner (Amazon)",
+      "type": "wholesale-client",
+      "left": 1045.1149609667416,
+      "top": 303.1622286386483
+    }
+  ],
+  "edges": [
+    {
+      "source": "S1",
+      "target": "P1",
+      "data": {
+        "value": 500,
+        "label": "Chips",
+        "transitMode": "Air",
+        "carrier": "FedEx"
+      }
+    },
+    {
+      "source": "S1",
+      "target": "P2",
+      "data": {
+        "value": 300,
+        "label": "Chips",
+        "transitMode": "Air",
+        "carrier": "FedEx"
+      }
+    },
+    {
+      "source": "S1",
+      "target": "P3",
+      "data": {
+        "value": 250,
+        "label": "Chips",
+        "transitMode": "Air",
+        "carrier": "FedEx"
+      }
+    },
+    {
+      "source": "S2",
+      "target": "P1",
+      "data": {
+        "value": 450,
+        "label": "Displays",
+        "transitMode": "Sea",
+        "carrier": "Maersk"
+      }
+    },
+    {
+      "source": "S3",
+      "target": "P1",
+      "data": {
+        "value": 400,
+        "label": "Batteries",
+        "transitMode": "Sea",
+        "carrier": "Maersk"
+      }
+    },
+    {
+      "source": "S3",
+      "target": "P2",
+      "data": {
+        "value": 200,
+        "label": "Batteries",
+        "transitMode": "Sea",
+        "carrier": "Maersk"
+      }
+    },
+    {
+      "source": "P1",
+      "target": "H1",
+      "data": {
+        "value": 600,
+        "label": "Finished Goods",
+        "transitMode": "Sea",
+        "carrier": "Maersk"
+      }
+    },
+    {
+      "source": "P1",
+      "target": "H2",
+      "data": {
+        "value": 750,
+        "label": "Finished Goods",
+        "transitMode": "Sea",
+        "carrier": "Maersk"
+      }
+    },
+    {
+      "source": "P2",
+      "target": "H1",
+      "data": {
+        "value": 500,
+        "label": "Finished Goods",
+        "transitMode": "Sea",
+        "carrier": "Maersk"
+      }
+    },
+    {
+      "source": "H1",
+      "target": "H3",
+      "data": {
+        "value": 400,
+        "label": "Bulk Transfer",
+        "transitMode": "Road",
+        "carrier": "DHL"
+      }
+    },
+    {
+      "source": "H1",
+      "target": "D3",
+      "data": {
+        "value": 700,
+        "label": "Local Delivery",
+        "transitMode": "Road",
+        "carrier": "DHL"
+      }
+    },
+    {
+      "source": "H2",
+      "target": "D1",
+      "data": {
+        "value": 500,
+        "label": "E-commerce",
+        "transitMode": "Road",
+        "carrier": "UPS"
+      }
+    },
+    {
+      "source": "H2",
+      "target": "D2",
+      "data": {
+        "value": 250,
+        "label": "Store Stock",
+        "transitMode": "Road",
+        "carrier": "UPS"
+      }
+    },
+    {
+      "source": "H3",
+      "target": "D4",
+      "data": {
+        "value": 400,
+        "label": "Partner Inventory",
+        "transitMode": "Road",
+        "carrier": "DHL"
+      }
+    },
+    {
+      "source": "S4",
+      "target": "P1",
+      "data": {
+        "value": 350,
+        "label": "Cameras",
+        "transitMode": "Air",
+        "carrier": "DHL"
+      }
+    },
+    {
+      "source": "S4",
+      "target": "P3",
+      "data": {
+        "value": 450,
+        "label": "Cameras",
+        "transitMode": "Air",
+        "carrier": "DHL"
+      }
+    },
+    {
+      "source": "P3",
+      "target": "H4",
+      "data": {
+        "value": 700,
+        "label": "Finished Goods",
+        "transitMode": "Air",
+        "carrier": "Emirates"
+      }
+    },
+    {
+      "source": "H4",
+      "target": "H5",
+      "data": {
+        "value": 300,
+        "label": "Euro Transfer",
+        "transitMode": "Rail",
+        "carrier": "DB Cargo"
+      }
+    },
+    {
+      "source": "H4",
+      "target": "D5",
+      "data": {
+        "value": 200,
+        "label": "E-commerce EU",
+        "transitMode": "Road",
+        "carrier": "DPD"
+      }
+    },
+    {
+      "source": "H4",
+      "target": "D6",
+      "data": {
+        "value": 200,
+        "label": "Store Stock UK",
+        "transitMode": "Road",
+        "carrier": "DPD"
+      }
+    },
+    {
+      "source": "H5",
+      "target": "D7",
+      "data": {
+        "value": 300,
+        "label": "Global Distribution",
+        "transitMode": "Air",
+        "carrier": "FedEx"
+      }
+    }
+  ],
+  "groups": []
+}
